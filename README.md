@@ -1,144 +1,145 @@
 # 🚦 Smart Traffic AI
 
-An AI-powered traffic intelligence system that predicts traffic volume, analyzes congestion patterns, and provides smart traffic-management recommendations.
+Smart Traffic AI is an AI-powered traffic prediction and analytics application built using Python, Machine Learning, Pandas, and Streamlit.
 
-Smart Traffic AI combines **Machine Learning, traffic analytics, weather information, and AI-based vehicle detection** into an interactive Streamlit dashboard.
+The application predicts traffic volume based on selected conditions and provides interactive traffic analytics and congestion information.
 
----
+## ✨ Features
 
-## 📌 Project Overview
-
-Traffic congestion is a major challenge in modern cities. Smart Traffic AI aims to assist traffic authorities by analyzing historical traffic data and predicting traffic volume based on different environmental and time-related conditions.
-
-The application provides an interactive dashboard where users can:
-
-- Enter traffic and weather conditions
-- Predict traffic volume using a trained Machine Learning model
-- Understand the predicted congestion level
-- Analyze historical traffic patterns
-- Identify peak traffic hours
-- Capture traffic scenes using a webcam
-- Detect vehicles in captured traffic images using YOLO
-- View AI-assisted recommendations for traffic management
-
----
-
-## ✨ Key Features
-
-### 🤖 AI Traffic Prediction
-Predicts traffic volume using:
-
-- Hour of the day
-- Temperature
-- Rain
-- Snow
-- Cloud coverage
-- Weather condition
-
-The prediction is classified into traffic levels such as:
-
-- 🟢 LOW
-- 🟡 MODERATE
-- 🔴 HIGH / CRITICAL
-
----
-
-### 📊 Traffic Analytics
-
-The dashboard analyzes historical traffic data and provides:
-
-- Average traffic by hour
-- Traffic-volume visualization
-- Peak traffic hour
-- Peak traffic volume
-- Congestion severity
-
----
-
-### 📷 Live Camera Monitoring
-
-The application includes a webcam-based traffic monitoring feature.
-
-Users can capture a traffic scene directly through the application.
-
-The captured image can then be analyzed for:
-
-- Scene visibility
-- Brightness
-- Traffic conditions
-- Vehicle presence
-
----
-
-### 🚗 AI Vehicle Detection
-
-Smart Traffic AI uses the **YOLO object-detection model** to identify vehicles in captured traffic scenes.
-
-The system detects common vehicle classes such as:
-
-- 🚗 Cars
-- 🏍️ Motorcycles
-- 🚌 Buses
-- 🚚 Trucks
-
-The detected vehicles are counted and displayed on the dashboard along with an annotated image showing the detected objects.
-
----
-
-### 🧠 AI Traffic Recommendations
-
-Based on predicted traffic conditions, the application provides recommendations such as:
-
-- Traffic monitoring
-- Signal optimization
-- Congestion alerts
-- Route management
-- Deployment of traffic personnel
-
----
-
-### 🏛️ Traffic Authority Action Center
-
-The dashboard provides an AI-assisted action panel for traffic authorities, including:
-
-- 🚦 Signal Optimization
-- 📢 Congestion Alerts
-- 🛣️ Route Management
-
-These recommendations demonstrate how traffic prediction can support smarter city management.
-
----
+* 🚦 AI-based traffic volume prediction
+* 📊 Interactive traffic analytics
+* 📈 Average traffic by hour
+* 🟢 Traffic congestion level detection
+* 📅 Traffic pattern analysis
+* 🖥️ Interactive Streamlit dashboard
+* 🤖 Machine Learning model for traffic prediction
 
 ## 🛠️ Technologies Used
 
-- **Python**
-- **Pandas** – Data processing and analysis
-- **NumPy** – Numerical operations
-- **Scikit-learn** – Machine Learning
-- **Streamlit** – Interactive web application
-- **OpenCV** – Image and camera processing
-- **YOLO** – AI-based vehicle detection
-- **Joblib** – Model loading
-- **Matplotlib / Streamlit Charts** – Data visualization
-- **Git & GitHub** – Version control
-
----
+* Python
+* Streamlit
+* Pandas
+* NumPy
+* Scikit-learn
+* Joblib
+* Matplotlib
 
 ## 📂 Project Structure
 
 ```text
 Smart_Traffic_Ai/
 │
+├── app.py
+├── train_model.py
+├── requirements.txt
+├── README.md
+│
 ├── assets/
-│   ├── traffic_hero.jpeg
 │   ├── traffic_analysis.jpeg
+│   ├── traffic_hero.jpeg
 │   └── traffic_signal.jpeg
 │
 ├── data/
 │   └── Metro_Interstate_Traffic_Volume.csv
 │
-├── model/
-│   ├── traffic_model.pkl
+└── model/
+    └── traffic_model.pkl
+```
+
+## ⚠️ Model File
+
+The trained `traffic_model.pkl` file is not included in the GitHub repository because of its large file size.
+
+To run the application locally, the trained model must be present at:
+
+```text
+model/traffic_model.pkl
+```
+
+## ▶️ How to Run the Application Locally
+
+### 1. Download the Project
+
+Download the repository from GitHub or clone it using:
+
+```bash
+git clone https://github.com/riyasharmaa30/Smart_Traffic_AI.git
+```
+
+### 2. Open the Project in VS Code
+
+Open the downloaded `Smart_Traffic_Ai` folder in Visual Studio Code.
+
+### 3. Open the Terminal
+
+In VS Code, open:
+
+**Terminal → New Terminal**
+
+Make sure the terminal is inside the project folder.
+
+### 4. Install the Required Libraries
+
+Run:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+This installs all the Python libraries required by the application.
+
+### 5. Make Sure the Model File Exists
+
+Check that the trained model is available here:
+
+```text
+model/traffic_model.pkl
+```
+
+The application needs this file to make traffic predictions.
+
+### 6. Start the Streamlit Application
+
+Run:
+
+```bash
+python -m streamlit run app.py
+```
+
+### 7. Open the Application
+
+After starting Streamlit, the terminal will display a local address similar to:
+
+```text
+Local URL: http://localhost:8501
+```
+
+Open the **Local URL** in your web browser.
+
+The Smart Traffic AI dashboard should then open.
+
+## 🧠 How It Works
+
+1. The user enters/selects the required traffic conditions.
+2. The trained Machine Learning model processes the input.
+3. The application predicts the expected traffic volume.
+4. The prediction is converted into a traffic congestion level.
+5. The dashboard displays the prediction and traffic analytics.
+
+## 📊 Dataset
+
+The project uses the **Metro Interstate Traffic Volume** dataset for traffic analysis and prediction.
+
+## 👩‍💻 Author
+
+**Riya Sharma**
+
+## 📌 Important Note
+
+This project is currently designed to run **locally using Streamlit**.
+
+GitHub is used to store and share the project source code. The Streamlit application itself is not automatically executed by GitHub.
+
 │   └── features.pkl
 │
 ├── app.py
